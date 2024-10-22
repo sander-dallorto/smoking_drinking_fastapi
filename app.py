@@ -5,7 +5,7 @@ Created on Mon Oct 21 14:08:01 2024
 @author: sande
 """
 
-# 1. Library imports
+# 1. Importando libs
 import uvicorn
 from fastapi import FastAPI
 from HealthDatas import HealthData
@@ -13,7 +13,7 @@ import numpy as np
 import pickle
 import pandas as pd
 import nest_asyncio
-# 2. Create the app object
+# 2. Criando o objeto app
 app = FastAPI()
 pickle_in = open("classifier.pkl","rb")
 classifier=pickle.load(pickle_in)
