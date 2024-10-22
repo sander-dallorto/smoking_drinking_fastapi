@@ -10,7 +10,7 @@ from pydantic import BaseModel, confloat, conint
 from typing import Optional, Literal
 
 class HealthData(BaseModel):
-    sex: Optional[confloat(ge=0, le=1)]  # Assuming 'sex' is encoded as 0 (Female) and 1 (Male)
+    sex: Optional[confloat(ge=0, le=1)]  
     age: Optional[float]
     height: Optional[float]
     weight: Optional[float]
@@ -34,7 +34,7 @@ class HealthData(BaseModel):
     gamma_GTP: Optional[float]
     SMK_stat_type_cd: Optional[float]  # Smoking Status
     DRK_YN: Optional[Literal['Y', 'N']]  # Drinking (Yes/No)
-    age_group: Optional[Literal['0-18', '19-35', '36-50', '51-65', '65+']]  # Assuming possible age groups
+    age_group: Optional[Literal['0-18', '19-35', '36-50', '51-65', '65+']] 
     bmi: Optional[float]  # Body Mass Index
     BP_ratio: Optional[float]  # Blood Pressure ratio
     HDL_ratio: Optional[float]  # HDL Cholesterol ratio
@@ -42,10 +42,10 @@ class HealthData(BaseModel):
     High_Blood_Pressure: Optional[float]
     High_Total_Cholesterol: Optional[float]
     High_LDL_Cholesterol: Optional[float]
-    age_group_encoded: Optional[conint(ge=0)]  # Assuming this is an encoded integer representation of age groups
+    age_group_encoded: Optional[conint(ge=0)] 
 
     class Config:
-        # Example schema to help with validation and clarity
+        # Exemplo para realizar predição
         schema_extra = {
             "example": {
                 "sex": 1.0,
